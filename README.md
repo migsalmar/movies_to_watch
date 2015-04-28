@@ -29,12 +29,12 @@ Your job: make the following URLs work
 
 ### Index of all
 
- - http://localhost:3000/movies
- - http://localhost:3000/actors
- - http://localhost:3000/directors
+ - [http://localhost:3000/movies](http://localhost:3000/movies)
+ - [http://localhost:3000/actors](http://localhost:3000/actors)
+ - [http://localhost:3000/directors](http://localhost:3000/directors)
 
 ### Show individual details:
 
- - http://localhost:3000/movies/15
- - http://localhost:3000/actors/15
- - http://localhost:3000/directors/15
+ - [http://localhost:3000/movies/15](http://localhost:3000/movies/15)
+ - [http://localhost:3000/actors/15](http://localhost:3000/actors/15)
+ - [http://localhost:3000/directors/15](http://localhost:3000/directors/15)
