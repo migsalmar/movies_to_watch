@@ -1,0 +1,16 @@
+<h1>List of Movies</h1>
+
+<a href="/movies/new">Add a new Movie</a>
+
+<table>
+<% @movies.each do |movie| %>
+  <tr>
+    <td><a href="/movies/<%= movie.id %>"><%= movie.title %></a></td>
+    <td><%= movie.year %></td>
+    <td><%= movie.description %></td>
+    <td><%= movie.duration %></td>
+    <td><a href="/movies/<%= movie.id %>/edit">Edit</a></td>
+    <td><a href="/delete_movie/<%= movie.id %>">Delete</a></td>
+  </tr>
+<% end %>
+</table>

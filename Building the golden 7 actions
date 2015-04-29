@@ -1,0 +1,114 @@
+Building the golden 7 actions
+
+Everything done on a webapp is creating and destroy rows.
+Index, show, new form, create form, destroy.
+
+rails console
+
+Movie.count
+
+rake db:drop (drop database)
+
+actor.count
+director.count
+
+don't waste time entering stuff into rails console
+instead
+
+Build index action for movies, directors, and actors.
+
+
+create my_styles.css and put it on the public folder so that is hosted by web server.  Every file that sits here is automatically hosted
+
+For the midterm, know which cheat sheet to use.
+
+rails c
+
+Movie.first
+Movie.where(:year => 2012).count  if the last argument is a hash you can drop the hash rockets and ruby will figure it out. Movie.where :year => 2012 (you can drop parenthesis) only the last one.
+
+Movie.where (:year => 2012, :title => "whatever")
+
+
+In the routes the get is a method with two arguments, we could technically drop the hash because the last argument is a hash.
+
+This is a way to drop the noise.
+
+Suppose we want to search by director?  instead of name we use the id number.
+
+To add a column, it is best to add the id value than the name value.  always make it an integer and store the id number.
+
+The Id column is called the primary key.  When you add a column to another table whose job is to hold the primary key, the new table column is called the foreign key.
+
+rake tasks are little ruby scripts that do specific functions for you.  rake is an interpretation of a code.
+
+Theres a method called resources
+
+rake routes - show routes
+
+#Routes to CREATE directors
+
+resources(:directors)
+end
+
+Restful API or architectures - RESTful Representational State Transfer - how you name your urls.
+
+Http has as part of the request; the request is the more complicated object.
+
+The request is what goes into routes.
+The user sends us a request and rails opens the request.   It depends on how the params are coming in.  Everything the user sends us is part of the request.   The request includes the verb.
+
+The browser's address bar always uses the get verb.  There are four verbs in https: get - maps to read; post - maps to create; patch - maps to update; delete - maps to delete.  If we want to bring into compliance with the convention of most aps; use the correct verb for the action the user tries to perform.
+
+put is the same as patch.
+
+to bring routes into compliance.
+
+Rails has a built in way to shortcut all routes.  it is very advanced.  We have developed a simpler version of the shortcut and it is written inside a Gem.  Read starter_generator cheat sheet.
+
+
+Add line to gemfile and bundle install.
+
+rails generate starter:resource instructor first_name:string last_name:string bio:text paid:boolean
+
+
+created routes, the controller, the migrate; it also writes the view templates which are formatted with bootstrap classes.  however I need to reference bootstrap for it to show. link the application layout to bootstrap. and font awesome too.
+
+However, it has a new if part. the rule to avoid repetition of items.  If the save succeeds, do the normal thing, if it fails write a new form.
+
+Even the stylesheets are repetitive
+
+rails g starter:style default "Enter"
+
+If @instructor.save - produce a method that rewrites itself whenever the user creates something.
+
+In the routes file, there is an extra thing :as => 'instructor'
+
+instructor_url;
+
+rake routes -
+
+Now we know what the prefix and verb are for.  You should never hard code urls anymore, just use the method.
+Is the name route helper methods.
+
+:notice => function being passed to the next visit; it then goes away.
+
+In the markup
+
+Include somewhere in the markup there is a helper method or notice.
+
+Where to put it in the markup with the helper method.
+
+On any redirect try to include descriptive notice.
+
+The view helper methods; they write html for us.  instead of writing it by hand, it is written for us. It is a better markup.  instead of writing an image tag by hand, a view helper can do the same thing.
+
+similar to hand and helper method.  alt text.
+
+the "link to" helper method is to write a text.  in order to send those verbs, you have to use the helper methods.
+
+A tag for the delete link.  url delete.  method delete.
+
+forms have helper methods too.
+
+
